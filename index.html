@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>EVENTPLANNERPERAK — Mobile Business Management System</title>
 
-  <meta name="theme-color" content="#0B0B0C">
+  <meta name="theme-color" content="#000000">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="EVENTPLANNERPERAK">
   <meta name="description" content="EVENTPLANNERPERAK — Black & Gold Business & Event Management Cloud System">
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23F3E5AB'/%3E%3Cstop offset='45%25' stop-color='%23D4AF37'/%3E%3Cstop offset='100%25' stop-color='%23997A15'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='110' fill='%230B0B0E'/%3E%3Crect x='20' y='20' width='472' height='472' rx='95' fill='none' stroke='url(%23g)' stroke-width='6' opacity='0.45'/%3E%3Cpath d='M115 150 H 265 V 205 H 178 V 235 H 248 V 285 H 178 V 315 H 268 V 370 H 115 Z' fill='url(%23g)'/%3E%3Cpath d='M255 150 H 335 C 388 150 422 178 422 225 C 422 272 388 300 335 300 H 255 Z M 318 205 H 332 C 358 205 368 214 368 225 C 368 236 358 245 332 245 H 318 Z' fill='url(%23g)'/%3E%3C/svg%3E">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23F3E5AB'/%3E%3Cstop offset='45%25' stop-color='%23D4AF37'/%3E%3Cstop offset='100%25' stop-color='%23997A15'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='110' fill='%230B0B0E'/%3E%3Crect x='20' y='20' width='472' height='472' rx='95' fill='none' stroke='url(%23g)' stroke-width='6' opacity='0.45'/%3E%3Cpath d='M115 150 H 265 V 205 H 178 V 235 H 248 V 285 H 178 V 315 H 268 V 370 H 115 Z' fill='url(%23g)'/%3E%3Cpath d='M255 150 H 335 C 388 150 422 178 422 225 C 422 272 388 300 335 300 H 255 Z M 318 205 H 332 C 358 205 368 214 368 225 C 368 236 358 245 332 245 H 318 Z' fill='url(%23g)'/%3E%3C/svg%3E">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -297,12 +300,11 @@
     @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
     @keyframes rotateBorder { to { --angle: 360deg; } }
     .login-logo-container {
-      width: 92px; height: 92px; margin: 0 auto 18px; border-radius: 26px; padding: 3px;
-      background: var(--gold-gradient); box-shadow: var(--shadow-gold-glow);
+      width: 220px; height: 220px; margin: -10px auto 6px; border-radius: 28px; overflow: hidden; background: #000;
+      box-shadow: 0 0 40px rgba(212,175,55,0.18); border: 1px solid var(--border-subtle);
       animation: floaty 4s ease-in-out infinite;
     }
-    .login-logo-inner { width: 100%; height: 100%; border-radius: 23px; background: #0B0B0E; overflow: hidden; }
-    .login-logo-inner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .login-logo-container img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.18); }
     .login-card > * { animation: riseIn .6s var(--ease-smooth) both; }
     .login-card > *:nth-child(2) { animation-delay: .08s; } .login-card > *:nth-child(3) { animation-delay: .14s; }
     .login-card > *:nth-child(4) { animation-delay: .2s; } .login-card > *:nth-child(5) { animation-delay: .26s; } .login-card > *:nth-child(6) { animation-delay: .32s; }
@@ -714,13 +716,10 @@
   <div id="login-view">
     <div class="glass-card login-card" id="login-card">
       <div class="login-logo-container">
-        <div class="login-logo-inner">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cdefs%3E%3ClinearGradient id='gLogin' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23F6E29F'/%3E%3Cstop offset='45%25' stop-color='%23D4AF37'/%3E%3Cstop offset='100%25' stop-color='%238A6C13'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='500' height='500' rx='90' fill='%230A0A0D'/%3E%3Crect x='18' y='18' width='464' height='464' rx='76' fill='none' stroke='url(%23gLogin)' stroke-width='4' opacity='0.55'/%3E%3Cpath d='M105 145 H 255 V 200 H 170 V 230 H 238 V 280 H 170 V 310 H 258 V 365 H 105 Z' fill='url(%23gLogin)'/%3E%3Cpath d='M248 145 H 332 C 388 145 425 174 425 224 C 425 274 388 303 332 303 H 248 Z M 312 200 H 328 C 354 200 366 210 366 224 C 366 238 354 248 328 248 H 312 Z' fill='url(%23gLogin)'/%3E%3Ctext x='250' y='425' font-family='Cinzel, serif' font-size='27' fill='url(%23gLogin)' font-weight='700' letter-spacing='5' text-anchor='middle'%3EEVENTPLANNERPERAK%3C/text%3E%3C/svg%3E" alt="EVENTPLANNERPERAK Logo" id="main-login-logo">
-        </div>
+        <img src="/assets/logo-full.jpg" alt="EVENTPLANNERPERAK" id="main-login-logo">
       </div>
 
       <div>
-        <h2 style="color: var(--gold-light); font-size: 1.45rem; margin-bottom: 4px; letter-spacing: 1px;">EVENTPLANNERPERAK</h2>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 24px;">Mobile Business &amp; Event Management Cloud</p>
       </div>
 
@@ -770,10 +769,10 @@
       <div class="sidebar-brand">
         <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
           <div class="brand-logo-sidebar">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='gSb' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23F6E29F'/%3E%3Cstop offset='50%25' stop-color='%23D4AF37'/%3E%3Cstop offset='100%25' stop-color='%238A6C13'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' rx='42' fill='%2308080A'/%3E%3Cpath d='M42 50 H 105 V 72 H 68 V 85 H 98 V 107 H 68 V 120 H 106 V 142 H 42 Z' fill='url(%23gSb)'/%3E%3Cpath d='M100 50 H 136 C 160 50 176 62 176 83 C 176 104 160 116 136 116 H 100 Z M 126 73 H 134 C 146 73 151 77 151 83 C 151 89 146 93 134 93 H 126 Z' fill='url(%23gSb)'/%3E%3C/svg%3E" alt="EP">
+            <img src="/assets/logo-mark.png" alt="EP">
           </div>
           <div style="min-width: 0;">
-            <h3 style="font-size: 0.78rem; color: var(--gold-light); line-height: 1.15; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">EVENTPLANNERPERAK</h3>
+            <h3 style="font-size: 0.7rem; letter-spacing: 0.2px; color: var(--gold-light); line-height: 1.15; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">EVENTPLANNERPERAK</h3>
             <span style="font-size: 0.6rem; color: var(--gold-dark); letter-spacing: 1.4px; font-weight: 800;">CLOUD SUITE</span>
           </div>
         </div>
@@ -828,7 +827,7 @@
             <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
           </button>
           <div class="brand-logo-header" title="EVENTPLANNERPERAK">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='gHdr' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23F6E29F'/%3E%3Cstop offset='50%25' stop-color='%23D4AF37'/%3E%3Cstop offset='100%25' stop-color='%238A6C13'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' rx='42' fill='%2308080A'/%3E%3Cpath d='M42 50 H 105 V 72 H 68 V 85 H 98 V 107 H 68 V 120 H 106 V 142 H 42 Z' fill='url(%23gHdr)'/%3E%3Cpath d='M100 50 H 136 C 160 50 176 62 176 83 C 176 104 160 116 136 116 H 100 Z M 126 73 H 134 C 146 73 151 77 151 83 C 151 89 146 93 134 93 H 126 Z' fill='url(%23gHdr)'/%3E%3C/svg%3E" alt="EP">
+            <img src="/assets/logo-mark.png" alt="EP">
           </div>
           <div class="title-wrap">
             <div class="page-crumb" id="page-crumb">Overview</div>
@@ -1708,7 +1707,7 @@
     const S = () => window.AppState;
     const $ = (id) => document.getElementById(id);
 
-    const RECEIPT_LOGO = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='gRc' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23F6E29F'/%3E%3Cstop offset='50%25' stop-color='%23D4AF37'/%3E%3Cstop offset='100%25' stop-color='%238A6C13'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' rx='42' fill='%2308080A'/%3E%3Cpath d='M42 50 H 105 V 72 H 68 V 85 H 98 V 107 H 68 V 120 H 106 V 142 H 42 Z' fill='url(%23gRc)'/%3E%3Cpath d='M100 50 H 136 C 160 50 176 62 176 83 C 176 104 160 116 136 116 H 100 Z M 126 73 H 134 C 146 73 151 77 151 83 C 151 89 146 93 134 93 H 126 Z' fill='url(%23gRc)'/%3E%3C/svg%3E";
+    const RECEIPT_LOGO = "/assets/logo-mark.png";
     const PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150'%3E%3Crect width='200' height='150' fill='%23181820'/%3E%3Cpath d='M80 60 L100 48 L120 60 L120 88 L100 100 L80 88 Z M80 60 L100 72 L120 60 M100 72 L100 100' fill='none' stroke='%23D4AF37' stroke-width='3' stroke-linejoin='round' opacity='.7'/%3E%3C/svg%3E";
     const ORDER_STATUSES = ['Pending', 'Confirmed', 'In Progress', 'Ready', 'Completed', 'Cancelled'];
     const EXPENSE_CATS = ['Raw Materials', 'Premises Rental', 'Utilities', 'Marketing', 'Salaries & Wages', 'Transportation', 'Equipment & Deco', 'Others'];
@@ -2825,7 +2824,7 @@
       const bal = balanceOf(o);
       display.innerHTML = `
         <div style="text-align: center; margin-bottom: 12px;">
-          <div style="width: 52px; height: 52px; margin: 0 auto 6px; background: #08080a; border-radius: 8px; border: 1px solid #d4af37; overflow: hidden;"><img src="${RECEIPT_LOGO}" alt="EP Logo" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="width: 52px; height: 52px; margin: 0 auto 6px; background: #08080a; border-radius: 10px; overflow: hidden;"><img src="${RECEIPT_LOGO}" alt="EP Logo" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
           <h2 style="font-size: 1.15rem; margin-bottom: 2px;">${esc(st.businessName)}</h2>
           <div style="font-size: 0.75rem; color: #555;">Registration No: ${esc(st.ssmNo || '-')}</div>
           ${st.address ? `<div style="font-size: 0.75rem; color: #555;">${esc(st.address)}</div>` : ''}
@@ -3312,6 +3311,10 @@
     }
 
     /* ---------- Boot ---------- */
+    if ('serviceWorker' in navigator && location.protocol === 'https:') {
+      window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(err => console.warn('SW registration failed:', err)));
+    }
+
     window.addEventListener('load', () => {
       buildModuleGrid();
       icons();
